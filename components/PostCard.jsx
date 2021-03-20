@@ -17,8 +17,9 @@ const PostCard = ({ post }) => {
     <div className="col-span-3">
 
       <div>
-        {/* TODO: change icon based on the post platform */}
-        <FacebookIcon className="h-4 w-auto" fill={brandColors.facebook.bg} />
+        { (post.platform === 'facebook') ?
+          <FacebookIcon className="h-4 w-auto" fill={brandColors.facebook.bg} /> :
+          <InstagramIcon className="h-3 w-auto" fill={brandColors.instagram.bg} />}
         {/* TODO: format date properly */}
         <p>{post.published_time}</p>
       </div>
